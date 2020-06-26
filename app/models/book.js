@@ -5,6 +5,7 @@ export default class BookModel extends Model {
   @attr name;
   @attr singularName;
   @attr numChapters;
+  @attr('date') lastReadAt;
 
   @computed('id')
   get numericId() {

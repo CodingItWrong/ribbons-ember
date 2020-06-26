@@ -3,6 +3,9 @@
     <li>
       <button {{on 'click' (fn this.startReading book)}}>
         {{book.name}}
+        {{#if book.lastReadAt}}
+          (last read {{relative-date book.lastReadAt}})
+        {{/if}}
       </button>
     </li>
   {{/each}}
