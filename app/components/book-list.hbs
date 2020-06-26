@@ -1,12 +1,18 @@
-<ul>
+<PaperList>
   {{#each this.sortedBooks as |book|}}
-    <li>
-      <button {{on 'click' (fn this.startReading book)}}>
-        {{book.name}}
+    <PaperItem
+      @class="md-2-line"
+      @onClick={{fn this.startReading book}}
+    >
+      <div class="md-list-item-text">
+        <h3>{{book.name}}</h3>
         {{#if book.lastReadAt}}
-          (last read {{relative-date book.lastReadAt}})
+          <p>
+            Last read {{relative-date book.lastReadAt}}
+          </p>
         {{/if}}
-      </button>
-    </li>
+      </div>
+      <PaperDivider />
+    </PaperItem>
   {{/each}}
-</ul>
+</PaperList>
