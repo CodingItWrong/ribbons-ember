@@ -1,0 +1,12 @@
+{{#if @reading.allChaptersRead}}
+  <button {{on 'click' this.markComplete}}>
+    Complete
+    {{@reading.book.name}}
+  </button>
+{{else}}
+  <button {{on 'click' this.markNextChapterRead}}>
+    Read
+    {{@reading.book.nameForChapter}}
+    {{this.chapterToRead}}
+  </button>
+{{/if}}

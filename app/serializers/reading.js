@@ -1,8 +1,8 @@
-import JSONAPISerializer from '@ember-data/serializer/json-api';
+import ApplicationSerializer from './application';
 
-const attributeToOmit = ['createdAt', 'updatedAt', 'completedAt'];
+const attributeToOmit = ['furthestReadChapter'];
 
-export default class ApplicationSerializer extends JSONAPISerializer {
+export default class ReadingSerializer extends ApplicationSerializer {
   serializeAttribute(snapshot, json, key, attributes) {
     const include = !attributeToOmit.includes(attributes.name);
     if (include) {

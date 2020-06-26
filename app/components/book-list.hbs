@@ -1,0 +1,9 @@
+<ul>
+  {{#each this.sortedBooks as |book|}}
+    <li>
+      <button {{on 'click' (fn this.startReading book)}}>
+        {{book.name}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
