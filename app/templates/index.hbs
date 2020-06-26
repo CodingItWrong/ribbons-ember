@@ -1,14 +1,11 @@
-<ul>
-  {{#each this.model as |reading|}}
-    <li>
-      <ReadingControl
-        @reading={{reading}}
-        @onComplete={{action send 'refresh'}}
-      />
-    </li>
-  {{else}}
-    <li>No current readings</li>
-  {{/each}}
-</ul>
+{{#each this.model as |reading|}}
+  <ReadingControl
+    @table={{this.hasMultipleReadings}}
+    @reading={{reading}}
+    @onComplete={{action send 'refresh'}}
+  />
+{{else}}
+  <p>No current readings</p>
+{{/each}}
 
 <LinkTo @route="readings.new">Start a Reading</LinkTo>
