@@ -5,7 +5,13 @@
     @onComplete={{action send 'refresh'}}
   />
 {{else}}
-  <p>No current readings</p>
+  <p>You aren't reading a book right now.</p>
+  <h2>Let's get started!</h2>
+  <PaperButton
+    @raised={{true}}
+    @primary={{true}}
+    @onClick={{this.goToNewReadings}}
+  >
+    Start a Book
+  </PaperButton>
 {{/each}}
-
-<LinkTo @route="readings.new">Start a Reading</LinkTo>
