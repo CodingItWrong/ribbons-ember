@@ -13,12 +13,8 @@ export default class BookListComponent extends Component {
 
   @action
   async startReading(book) {
-    try {
-      const reading = this.store.createRecord('reading', { book });
-      await reading.save();
-      this.args.onChoose();
-    } catch (e) {
-      console.error(e);
-    }
+    const reading = this.store.createRecord('reading', { book });
+    await reading.save();
+    this.args.onChoose();
   }
 }
