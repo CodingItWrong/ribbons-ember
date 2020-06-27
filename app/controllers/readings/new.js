@@ -7,7 +7,6 @@ export default class ReadingsNewController extends Controller {
 
   @action
   goHome() {
-    console.log('goHome');
     this.router.transitionTo('index');
   }
 }

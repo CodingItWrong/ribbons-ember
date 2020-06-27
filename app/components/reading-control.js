@@ -6,9 +6,6 @@ export default class ReadingControlComponent extends Component {
   @service store;
 
   get chapterToRead() {
-    console.log({
-      furthestReadChapter: this.args.reading.furthestReadChapter,
-    });
     return this.args.reading.furthestReadChapter + 1;
   }
 
@@ -25,13 +22,9 @@ export default class ReadingControlComponent extends Component {
 
   @action
   async markComplete() {
-    try {
-      const { reading, onComplete } = this.args;
-      reading.complete = true;
-      await reading.save();
-      onComplete();
-    } catch (e) {
-      console.error(e);
-    }
+    const { reading, onComplete } = this.args;
+    reading.complete = true;
+    await reading.save();
+    onComplete();
   }
 }
