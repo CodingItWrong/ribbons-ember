@@ -1,18 +1,34 @@
-<PaperList>
-  {{#each this.sortedBooks as |book|}}
-    <PaperItem
-      @class="md-2-line"
-      @onClick={{fn this.startReading book}}
-    >
-      <div class="md-list-item-text">
-        <h3>{{book.name}}</h3>
-        {{#if book.lastReadAt}}
-          <p>
-            Last read {{relative-date book.lastReadAt}}
-          </p>
-        {{/if}}
-      </div>
-      <PaperDivider />
-    </PaperItem>
-  {{/each}}
-</PaperList>
+<PaperCard as |card|>
+  <PaperToolbar>
+    <PaperToolbarTools>
+      <h2>Start Reading</h2>
+      <span class="flex"></span>
+      <PaperButton
+        @iconButton={{true}}
+        @onClick={{@onClose}}
+      >
+        {{paper-icon 'clear'}}
+      </PaperButton>
+    </PaperToolbarTools>
+  </PaperToolbar>
+  <PaperContent>
+    <PaperList>
+      {{#each this.sortedBooks as |book|}}
+        <PaperItem
+          @class="md-2-line"
+          @onClick={{fn this.startReading book}}
+        >
+          <div class="md-list-item-text">
+            <h3>{{book.name}}</h3>
+            {{#if book.lastReadAt}}
+              <p>
+                Last read {{relative-date book.lastReadAt}}
+              </p>
+            {{/if}}
+          </div>
+          <PaperDivider />
+        </PaperItem>
+      {{/each}}
+    </PaperList>
+  </PaperContent>
+</PaperCard>

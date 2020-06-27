@@ -1,17 +1,58 @@
-{{#each this.model as |reading|}}
-  <ReadingControl
-    @table={{this.hasMultipleReadings}}
-    @reading={{reading}}
-    @onComplete={{action send 'refresh'}}
-  />
+{{#if this.model}}
+  {{#if this.hasMultipleReadings}}
+    <PaperCard as |card|>
+      <PaperToolbar>
+        <PaperToolbarTools>
+          <h2>Currently Reading</h2>
+        </PaperToolbarTools>
+      </PaperToolbar>
+      <PaperContent>
+        <PaperList>
+          {{#each this.model as |reading|}}
+            <ReadingControl
+              @table={{true}}
+              @reading={{reading}}
+              @onComplete={{action send 'refresh'}}
+            />
+          {{/each}}
+        </PaperList>
+      </PaperContent>
+    </PaperCard>
+  {{else}}
+    {{#each this.model as |reading|}}
+      <PaperCard as |card|>
+        <card.content @class="layout-column layout-align-center-center">
+          <ReadingControl
+            @table={{false}}
+            @reading={{reading}}
+            @onComplete={{action send 'refresh'}}
+          />
+        </card.content>
+      </PaperCard>
+    {{/each}}
+  {{/if}}
+
+  <div class="layout-column layout-align-center-center">
+    <PaperButton
+      @raised={{true}}
+      @primary={{true}}
+      @onClick={{this.goToNewReadings}}
+    >
+      Start Another Book
+    </PaperButton>
+  </div>
 {{else}}
-  <p>You aren't reading a book right now.</p>
-  <h2>Let's get started!</h2>
-  <PaperButton
-    @raised={{true}}
-    @primary={{true}}
-    @onClick={{this.goToNewReadings}}
-  >
-    Start a Book
-  </PaperButton>
-{{/each}}
+  <PaperCard as |card|>
+    <card.content @class="layout-column layout-align-center-center">
+      <p>You aren't reading a book right now.</p>
+      <h2>Let's get started!</h2>
+      <PaperButton
+        @raised={{true}}
+        @primary={{true}}
+        @onClick={{this.goToNewReadings}}
+      >
+        Start a Book
+      </PaperButton>
+    </card.content>
+  </PaperCard>
+{{/if}}

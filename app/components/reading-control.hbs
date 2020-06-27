@@ -30,30 +30,28 @@
     </div>
   </PaperItem>
 {{else}}
-  <div>
-    {{#if @reading.allChaptersRead}}
-      <p>You finished</p>
-      <h2>{{@reading.book.name}}</h2>
-      <PaperButton
-        @raised={{true}}
-        @primary={{true}}
-        @onClick={{this.markComplete}}
-      >
-        Mark
-        {{@reading.book.name}}
-        Completed
-      </PaperButton>
-    {{else}}
-      <p>Next up to read:</p>
-      <h2>{{@reading.book.nameForChapter}}</h2>
-      <h1>{{this.chapterToRead}}</h1>
-      <PaperButton
-        @raised={{true}}
-        @primary={{true}}
-        @onClick={{this.markNextChapterRead}}
-      >
-        Mark Chapter Read
-      </PaperButton>
-    {{/if}}
-  </div>
+  {{#if @reading.allChaptersRead}}
+    <p>You finished</p>
+    <h2>{{@reading.book.name}}</h2>
+    <PaperButton
+      @raised={{true}}
+      @primary={{true}}
+      @onClick={{this.markComplete}}
+    >
+      Mark
+      {{@reading.book.name}}
+      Completed
+    </PaperButton>
+  {{else}}
+    <p>Next up to read:</p>
+    <h2>{{@reading.book.nameForChapter}}</h2>
+    <h1>{{this.chapterToRead}}</h1>
+    <PaperButton
+      @raised={{true}}
+      @primary={{true}}
+      @onClick={{this.markNextChapterRead}}
+    >
+      Mark Chapter Read
+    </PaperButton>
+  {{/if}}
 {{/if}}
