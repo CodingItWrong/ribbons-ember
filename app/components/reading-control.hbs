@@ -45,7 +45,10 @@
     </PaperButton>
   {{else}}
     <p>Next up to read:</p>
-    <div data-test-next-chapter>
+    <div
+      class="layout-column layout-align-center-center"
+      data-test-next-chapter
+    >
       <h2>{{@reading.book.nameForChapter}}</h2>
       <h1>{{this.chapterToRead}}</h1>
     </div>
