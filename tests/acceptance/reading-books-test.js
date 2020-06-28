@@ -14,7 +14,11 @@ module('Acceptance | reading books', function (hooks) {
   setupMirage(hooks);
 
   test('it allows tracking readings', async function (assert) {
-    this.server.create('book', { id: 1, name: 'Ruth' });
+    this.server.create('book', {
+      id: 1,
+      name: 'Ruth',
+      numChapters: 4,
+    });
 
     await authenticateSession({ access_token: 'ABC123' });
 
@@ -27,7 +31,11 @@ module('Acceptance | reading books', function (hooks) {
     assert.dom('[data-test-next-chapter]').hasText('Ruth 1');
 
     await click('[data-test-read-button]');
-
     assert.dom('[data-test-next-chapter]').hasText('Ruth 2');
+
+    await click('[data-test-read-button]');
+    await click('[data-test-read-button]');
+    await click('[data-test-read-button]');
+    assert.dom('[data-test-finished]').hasText('Ruth');
   });
 });
