@@ -5,10 +5,6 @@ import { inject as service } from '@ember/service';
 export default class ReadingControlComponent extends Component {
   @service store;
 
-  get chapterToRead() {
-    return this.args.reading.furthestReadChapter + 1;
-  }
-
   @action
   async markNextChapterRead() {
     const { reading } = this.args;

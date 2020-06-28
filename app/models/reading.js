@@ -10,4 +10,8 @@ export default class ReadingModel extends Model {
   get allChaptersRead() {
     return this.furthestReadChapter >= this.book.get('numChapters');
   }
+
+  get chapterToRead() {
+    return this.furthestReadChapter + 1;
+  }
 }
