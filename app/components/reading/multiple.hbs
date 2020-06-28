@@ -7,42 +7,10 @@
   <PaperContent>
     <PaperList>
       {{#each @readings as |reading|}}
-        <ReadingControl
+        <Reading::Multiple::Row
           @reading={{reading}}
           @onComplete={{@onComplete}}
-          as |control|
-        >
-          <PaperItem as |controls|>
-            <p>
-              {{#if reading.allChaptersRead}}
-                {{reading.book.name}}
-              {{else}}
-                {{reading.book.nameForChapter}}
-                {{control.chapterToRead}}
-              {{/if}}
-            </p>
-            <PaperDivider />
-            <div class="md-secondary-container">
-              {{#if reading.allChaptersRead}}
-                <controls.button
-                  @raised={{true}}
-                  @primary={{true}}
-                  @onClick={{control.markComplete}}
-                >
-                  Complete
-                </controls.button>
-              {{else}}
-                <controls.button
-                  @raised={{true}}
-                  @primary={{true}}
-                  @onClick={{control.markNextChapterRead}}
-                >
-                  Read
-                </controls.button>
-              {{/if}}
-            </div>
-          </PaperItem>
-        </ReadingControl>
+        />
       {{/each}}
     </PaperList>
   </PaperContent>
