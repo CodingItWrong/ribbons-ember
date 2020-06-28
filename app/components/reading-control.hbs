@@ -32,7 +32,7 @@
 {{else}}
   {{#if @reading.allChaptersRead}}
     <p>You finished</p>
-    <h2>{{@reading.book.name}}</h2>
+    <h2 data-test-finished>{{@reading.book.name}}</h2>
     <PaperButton
       @raised={{true}}
       @primary={{true}}
