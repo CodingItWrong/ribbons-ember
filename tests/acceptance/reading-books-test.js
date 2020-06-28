@@ -25,5 +25,9 @@ module('Acceptance | reading books', function (hooks) {
     await click('[data-test-book="1"] button');
 
     assert.dom('[data-test-next-chapter]').hasText('Ruth 1');
+
+    await click('[data-test-read-button]');
+
+    assert.dom('[data-test-next-chapter]').hasText('Ruth 2');
   });
 });
