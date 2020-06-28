@@ -1,10 +1,6 @@
 export default function () {
   this.get('/books');
 
-  this.get('/readings', function (schema) {
-    return schema.readings.where({ complete: false });
-  });
-  this.get('/readings/:id');
   this.post('/readings', function (schema) {
     const attrs = this.normalizedRequestAttrs();
     const reading = schema.readings.create({
@@ -14,6 +10,10 @@ export default function () {
     });
     return reading;
   });
+  this.get('/readings', function (schema) {
+    return schema.readings.where({ complete: false });
+  });
+  this.get('/readings/:id');
   this.patch('/readings/:id');
 
   this.post('/chapter-completions', function (schema) {
