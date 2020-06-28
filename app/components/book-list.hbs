@@ -14,21 +14,10 @@
   <PaperContent>
     <PaperList>
       {{#each this.sortedBooks as |book|}}
-        <PaperItem
-          @class="md-2-line"
-          @onClick={{fn this.startReading book}}
-          data-test-book={{book.id}}
-        >
-          <div class="md-list-item-text">
-            <h3>{{book.name}}</h3>
-            {{#if book.lastReadAt}}
-              <p>
-                Last read {{relative-date book.lastReadAt}}
-              </p>
-            {{/if}}
-          </div>
-          <PaperDivider />
-        </PaperItem>
+        <BookList::item
+          @book={{book}}
+          @onChoose={{@onChoose}}
+        />
       {{/each}}
     </PaperList>
   </PaperContent>
