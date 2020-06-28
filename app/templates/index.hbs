@@ -20,15 +20,10 @@
     </PaperCard>
   {{else}}
     {{#each this.model as |reading|}}
-      <PaperCard as |card|>
-        <card.content @class="layout-column layout-align-center-center">
-          <ReadingControl
-            @table={{false}}
-            @reading={{reading}}
-            @onComplete={{action send 'refresh'}}
-          />
-        </card.content>
-      </PaperCard>
+      <Reading::Single
+        @reading={{reading}}
+        @onComplete={{action send 'refresh'}}
+      />
     {{/each}}
   {{/if}}
 
