@@ -1,23 +1,9 @@
 {{#if this.model}}
   {{#if this.hasMultipleReadings}}
-    <PaperCard as |card|>
-      <PaperToolbar>
-        <PaperToolbarTools>
-          <h2>Currently Reading</h2>
-        </PaperToolbarTools>
-      </PaperToolbar>
-      <PaperContent>
-        <PaperList>
-          {{#each this.model as |reading|}}
-            <ReadingControl
-              @table={{true}}
-              @reading={{reading}}
-              @onComplete={{action send 'refresh'}}
-            />
-          {{/each}}
-        </PaperList>
-      </PaperContent>
-    </PaperCard>
+    <Reading::Multiple
+      @readings={{this.model}}
+      @onComplete={{action send 'refresh'}}
+    />
   {{else}}
     {{#each this.model as |reading|}}
       <Reading::Single
