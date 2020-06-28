@@ -4,7 +4,7 @@
   as |control|
 >
   <PaperItem as |controls|>
-    <p>
+    <p data-test-reading={{@reading.book.id}}>
       {{#if @reading.allChaptersRead}}
         {{@reading.book.name}}
       {{else}}
@@ -19,6 +19,7 @@
           @raised={{true}}
           @primary={{true}}
           @onClick={{control.markComplete}}
+          data-test-complete-button={{@reading.book.id}}
         >
           Complete
         </controls.button>
@@ -27,6 +28,7 @@
           @raised={{true}}
           @primary={{true}}
           @onClick={{control.markNextChapterRead}}
+          data-test-read-button={{@reading.book.id}}
         >
           Read
         </controls.button>
