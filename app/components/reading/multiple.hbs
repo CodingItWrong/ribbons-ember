@@ -10,7 +10,7 @@
         <ReadingControl
           @table={{true}}
           @reading={{reading}}
-          @onComplete={{action send 'refresh'}}
+          @onComplete={{@onComplete}}
         />
       {{/each}}
     </PaperList>
