@@ -1,0 +1,18 @@
+<PaperCard as |card|>
+  <PaperToolbar>
+    <PaperToolbarTools>
+      <h2>Currently Reading</h2>
+    </PaperToolbarTools>
+  </PaperToolbar>
+  <PaperContent>
+    <PaperList>
+      {{#each @readings as |reading|}}
+        <ReadingControl
+          @table={{true}}
+          @reading={{reading}}
+          @onComplete={{action send 'refresh'}}
+        />
+      {{/each}}
+    </PaperList>
+  </PaperContent>
+</PaperCard>
