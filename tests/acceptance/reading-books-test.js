@@ -37,5 +37,8 @@ module('Acceptance | reading books', function (hooks) {
     await click('[data-test-read-button]');
     await click('[data-test-read-button]');
     assert.dom('[data-test-finished]').hasText('Ruth');
+
+    await click('[data-test-mark-complete-button]');
+    assert.dom('[data-test-no-readings]').exists();
   });
 });

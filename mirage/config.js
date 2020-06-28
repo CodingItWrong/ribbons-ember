@@ -1,17 +1,20 @@
 export default function () {
   this.get('/books');
 
-  this.get('/readings');
+  this.get('/readings', function (schema) {
+    return schema.readings.where({ complete: false });
+  });
   this.get('/readings/:id');
   this.post('/readings', function (schema) {
     const attrs = this.normalizedRequestAttrs();
     const reading = schema.readings.create({
       ...attrs,
       furthestReadChapter: 0,
+      complete: false,
     });
     return reading;
   });
-  this.patch('/readings');
+  this.patch('/readings/:id');
 
   this.post('/chapter-completions', function (schema) {
     const attrs = this.normalizedRequestAttrs();
