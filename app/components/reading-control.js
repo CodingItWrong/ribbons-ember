@@ -10,7 +10,7 @@ export default class ReadingControlComponent extends Component {
     const { reading } = this.args;
     const chapterCompletion = this.store.createRecord('chapterCompletion', {
       reading,
-      chapter: this.chapterToRead,
+      chapter: reading.chapterToRead,
     });
     await chapterCompletion.save();
     await reading.reload();
