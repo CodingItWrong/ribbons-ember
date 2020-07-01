@@ -7,7 +7,7 @@
     <h3>{{@book.name}}</h3>
     {{#if @book.lastReadAt}}
       <p>
-        Last read {{relative-date @book.lastReadAt}}
+        Last read {{time-ago @book.lastReadAt}}
       </p>
     {{/if}}
   </div>
