@@ -70,5 +70,10 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint:hbs lint:js"
+    }
   }
 }
