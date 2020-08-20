@@ -47,7 +47,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.apiHost = 'https://api.biblereading.need-bee.com';
+    ENV.apiHost = 'https://ribbons-api.herokuapp.com';
   }
 
   return ENV;
