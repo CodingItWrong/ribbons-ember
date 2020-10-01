@@ -1,11 +1,11 @@
-{{#if this.model}}
+{{#if @model}}
   {{#if this.hasMultipleReadings}}
     <Reading::Multiple
-      @readings={{this.model}}
+      @readings={{@model}}
       @onComplete={{action send "refresh"}}
     />
   {{else}}
-    {{#each this.model as |reading|}}
+    {{#each @model as |reading|}}
       <Reading::Single
         @reading={{reading}}
         @onComplete={{action send "refresh"}}
