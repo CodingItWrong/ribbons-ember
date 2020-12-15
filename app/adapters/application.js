@@ -9,6 +9,10 @@ export default class ApplicationAdapter extends JSONAPIAdapter.extend(
 ) {
   host = ENV.apiHost;
 
+  // TODO: remove this @computed decorator once we are migrated off Ember-Paper.
+  // Ember-Paper causes an "attempted to update" error upon login, preventing
+  // us from testing that this computed property really works without the
+  // decorator. It did not work in the past.
   @computed('session.{isAuthenticated,data.authenticated.access_token}')
   get headers() {
     let headers = {};
