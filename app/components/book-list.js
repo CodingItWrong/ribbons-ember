@@ -1,9 +1,8 @@
 import Component from '@glimmer/component';
-import { sort } from '@ember/object/computed';
+import sortBy from 'lodash/sortBy';
 
 export default class BookListComponent extends Component {
-  sortProperties = Object.freeze(['numericId:asc']);
-
-  @sort('args.books', 'sortProperties')
-  sortedBooks;
+  get sortedBooks() {
+    return sortBy(this.args.books.toArray(), ['numericId']);
+  }
 }
