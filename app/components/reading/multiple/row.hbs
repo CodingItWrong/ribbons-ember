@@ -3,17 +3,18 @@
   @onComplete={{@onComplete}}
   as |control|
 >
-  <PaperItem>
-    <p data-test-reading={{@reading.book.id}}>
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center"
+  >
+    <div data-test-reading={{@reading.book.id}}>
       {{#if @reading.allChaptersRead}}
         {{@reading.book.name}}
       {{else}}
         {{@reading.book.nameForChapter}}
         {{@reading.chapterToRead}}
       {{/if}}
-    </p>
-    <PaperDivider />
-    <div class="md-secondary-container">
+    </div>
+    <div>
       {{#if @reading.allChaptersRead}}
         <button
           type="button"
@@ -34,5 +35,5 @@
         </button>
       {{/if}}
     </div>
-  </PaperItem>
+  </li>
 </ReadingControl>

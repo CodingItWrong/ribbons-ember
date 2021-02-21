@@ -5,13 +5,13 @@
     </PaperToolbarTools>
   </PaperToolbar>
   <PaperContent>
-    <PaperList>
+    <ul class="list-group">
       {{#each @readings as |reading|}}
         <Reading::Multiple::Row
           @reading={{reading}}
           @onComplete={{@onComplete}}
         />
       {{/each}}
-    </PaperList>
+    </ul>
   </PaperContent>
 </PaperCard>
