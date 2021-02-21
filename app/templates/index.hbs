@@ -14,14 +14,14 @@
   {{/if}}
 
   <div class="layout-column layout-align-center-center">
-    <PaperButton
-      @raised={{true}}
-      @primary={{true}}
-      @onClick={{this.goToNewReadings}}
+    <button
+      type="button"
+      class="btn btn-primary"
+      {{on "click" this.goToNewReadings}}
       data-test-start-another-book-button
     >
       Start Another Book
-    </PaperButton>
+    </button>
   </div>
 {{else}}
   <Reading::NotStarted />

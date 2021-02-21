@@ -1,3 +1,12 @@
-.bg-primary {
-  background-color: rgb(0, 150, 136) !important;
+$bs-primary: rgb(0, 150, 136);
+
+.bg-primary,
+.btn-primary {
+  background-color: $bs-primary !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled):active {
+  border-color: $bs-primary;
 }

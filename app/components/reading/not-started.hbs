@@ -2,13 +2,13 @@
   <card.content @class="layout-column layout-align-center-center">
     <p data-test-no-readings>You aren't reading a book right now.</p>
     <h2>Let's get started!</h2>
-    <PaperButton
-      @raised={{true}}
-      @primary={{true}}
-      @onClick={{this.goToNewReadings}}
+    <button
+      type="button"
+      class="btn btn-primary"
+      {{on "click" this.goToNewReadings}}
       data-test-start-a-book-button
     >
       Start a Book
-    </PaperButton>
+    </button>
   </card.content>
 </PaperCard>
