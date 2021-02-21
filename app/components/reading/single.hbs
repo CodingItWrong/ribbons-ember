@@ -1,5 +1,5 @@
-<PaperCard as |card|>
-  <card.content @class="layout-column layout-align-center-center">
+<div class="card">
+  <div class="card-body text-center">
     <ReadingControl
       @reading={{@reading}}
       @onComplete={{@onComplete}}
@@ -37,5 +37,5 @@
         </button>
       {{/if}}
     </ReadingControl>
-  </card.content>
-</PaperCard>
+  </div>
+</div>
