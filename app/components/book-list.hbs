@@ -12,13 +12,13 @@
     </PaperToolbarTools>
   </PaperToolbar>
   <PaperContent>
-    <PaperList>
+    <div class="list-group">
       {{#each this.sortedBooks as |book|}}
         <BookList::item
           @book={{book}}
           @onChoose={{@onChoose}}
         />
       {{/each}}
-    </PaperList>
+    </div>
   </PaperContent>
 </PaperCard>

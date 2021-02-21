@@ -1,15 +1,13 @@
-<PaperItem
-  @class="md-2-line"
-  @onClick={{fn this.startReading}}
+<button
+  {{on "click" this.startReading}}
+  type="button"
+  class="list-group-item list-group-item-action"
   data-test-book={{@book.id}}
 >
-  <div class="md-list-item-text">
-    <h3>{{@book.name}}</h3>
-    {{#if @book.lastReadAt}}
-      <p>
-        Last read {{time-ago @book.lastReadAt}}
-      </p>
-    {{/if}}
-  </div>
-  <PaperDivider />
-</PaperItem>
+  <div>{{@book.name}}</div>
+  {{#if @book.lastReadAt}}
+    <div class="small muted">
+      Last read {{time-ago @book.lastReadAt}}
+    </div>
+  {{/if}}
+</button>
