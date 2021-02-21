@@ -8,15 +8,11 @@
   </IconButton>
 </div>
 
-<PaperCard>
-  <PaperContent>
-    <div class="list-group">
-      {{#each this.sortedBooks as |book|}}
-        <BookList::item
-          @book={{book}}
-          @onChoose={{@onChoose}}
-        />
-      {{/each}}
-    </div>
-  </PaperContent>
-</PaperCard>
+<div class="list-group">
+  {{#each this.sortedBooks as |book|}}
+    <BookList::item
+      @book={{book}}
+      @onChoose={{@onChoose}}
+    />
+  {{/each}}
+</div>
