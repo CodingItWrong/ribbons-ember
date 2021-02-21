@@ -1,16 +1,14 @@
+<div class="d-flex">
+  <h2 class="flex-fill">
+    Start Reading
+  </h2>
+  <span class="flex"></span>
+  <IconButton @onClick={{@onClose}}>
+    <AppIcon @icon="clear" @alt="clear" />
+  </IconButton>
+</div>
+
 <PaperCard>
-  <PaperToolbar>
-    <PaperToolbarTools>
-      <h2>Start Reading</h2>
-      <span class="flex"></span>
-      <PaperButton
-        @iconButton={{true}}
-        @onClick={{@onClose}}
-      >
-        {{paper-icon "clear"}}
-      </PaperButton>
-    </PaperToolbarTools>
-  </PaperToolbar>
   <PaperContent>
     <div class="list-group">
       {{#each this.sortedBooks as |book|}}
