@@ -1,5 +1,5 @@
 <PaperCard as |card|>
-  <PaperForm @onSubmit={{this.logIn}} as |form|>
+  <PaperForm @onSubmit={{this.logIn}}>
     <card.content>
       {{#if this.errorMessage}}
         <div
@@ -30,12 +30,12 @@
       </div>
     </card.content>
     <card.actions>
-      <form.submit-button
-        @raised="true"
-        @primary={{true}}
+      <button
+        type="submit"
+        class="btn btn-primary"
       >
         Log In
-      </form.submit-button>
+      </button>
     </card.actions>
   </PaperForm>
 </PaperCard>
