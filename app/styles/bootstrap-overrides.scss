@@ -14,3 +14,8 @@ $bs-primary: rgb(0, 150, 136);
 .text-primary {
   color: $bs-primary !important;
 }
+
+.form-control:focus {
+  border-color: $bs-primary;
+  box-shadow: 0 0 0 0.2rem $bs-primary;
+}
