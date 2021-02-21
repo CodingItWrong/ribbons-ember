@@ -10,3 +10,7 @@ $bs-primary: rgb(0, 150, 136);
 .btn-primary:not(:disabled):not(.disabled):active {
   border-color: $bs-primary;
 }
+
+.text-primary {
+  color: $bs-primary !important;
+}
