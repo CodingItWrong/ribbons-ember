@@ -26,7 +26,7 @@ module('Acceptance | reading books', function (hooks) {
 
     await click('[data-test-start-a-book-button]');
 
-    await click('[data-test-book="1"] button');
+    await click('[data-test-book="1"]');
 
     assert.dom('[data-test-next-chapter]').hasText('Ruth 1');
 

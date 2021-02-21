@@ -30,9 +30,9 @@ module('Acceptance | reading multiple books', function (hooks) {
     await visit('/');
 
     await click('[data-test-start-a-book-button]');
-    await click('[data-test-book="1"] button');
+    await click('[data-test-book="1"]');
     await click('[data-test-start-another-book-button]');
-    await click('[data-test-book="2"] button');
+    await click('[data-test-book="2"]');
 
     assert.dom('[data-test-reading="1"]').hasText('Ruth 1');
     assert.dom('[data-test-reading="2"]').hasText('Philippians 1');
