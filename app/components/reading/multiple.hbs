@@ -1,17 +1,10 @@
-<PaperCard>
-  <PaperToolbar>
-    <PaperToolbarTools>
-      <h2>Currently Reading</h2>
-    </PaperToolbarTools>
-  </PaperToolbar>
-  <PaperContent>
-    <ul class="list-group">
-      {{#each @readings as |reading|}}
-        <Reading::Multiple::Row
-          @reading={{reading}}
-          @onComplete={{@onComplete}}
-        />
-      {{/each}}
-    </ul>
-  </PaperContent>
-</PaperCard>
+<h2>Currently Reading</h2>
+
+<ul class="list-group">
+  {{#each @readings as |reading|}}
+    <Reading::Multiple::Row
+      @reading={{reading}}
+      @onComplete={{@onComplete}}
+    />
+  {{/each}}
+</ul>
