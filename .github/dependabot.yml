@@ -16,3 +16,5 @@ updates:
   - dependency-name: ember-source
     versions:
     - "*"
+  - dependency-name: husky
+    versions: "*"
