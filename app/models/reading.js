@@ -1,6 +1,6 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
-import classic from 'ember-classic-decorator';
 import { computed } from '@ember/object';
+import classic from 'ember-classic-decorator';
 
 @classic
 export default class ReadingModel extends Model {
