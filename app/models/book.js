@@ -6,6 +6,7 @@ import classic from 'ember-classic-decorator';
 export default class BookModel extends Model {
   @attr name;
   @attr singularName;
+  @attr abbreviation;
   @attr numChapters;
   @attr('date') lastReadAt;
 
