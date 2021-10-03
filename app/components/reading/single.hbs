@@ -24,8 +24,10 @@
           class="layout-column layout-align-center-center"
           data-test-next-chapter
         >
-          <h2>{{@reading.book.nameForChapter}}</h2>
-          <h1>{{@reading.chapterToRead}}</h1>
+          <a href="https://bible-text.herokuapp.com/v1/net/{{@reading.book.abbreviation}}/{{@reading.chapterToRead}}" target="_blank" rel="noopener noreferrer" class="unstyled-link">
+            <h2>{{@reading.book.nameForChapter}}</h2>
+            <h1>{{@reading.chapterToRead}}</h1>
+          </a>
         </div>
         <button
           type="button"
