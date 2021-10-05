@@ -10,7 +10,7 @@
       {{#if @reading.allChaptersRead}}
         {{@reading.book.name}}
       {{else}}
-        <a href="https://bible-text.herokuapp.com/v1/net/{{@reading.book.abbreviation}}/{{@reading.chapterToRead}}" target="_blank" rel="noopener noreferrer" class="unstyled-link">
+        <a href="https://bible-text.herokuapp.com/v1/net/{{@reading.book.abbreviation}}/{{@reading.chapterToRead}}" rel="noopener noreferrer" class="unstyled-link">
           {{@reading.book.nameForChapter}}
           {{@reading.chapterToRead}}
         </a>
