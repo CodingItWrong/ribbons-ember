@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  extends: ['octane', 'stylistic'],
+  extends: ['recommended', 'stylistic'],
   rules: {
     'eol-last': 'always',
     'no-action': false, // used to refresh route
